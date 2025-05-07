@@ -13,7 +13,7 @@ if st.button("🔎 Get Recommendations"):
     if query.strip(): 
         try:
             with st.spinner("Fetching recommendations..."):
-                res = requests.post("http://localhost:8000/recommend", json={"query": query})
+                res = requests.post("https://shl-assessment-recommendation-system-xx1e.onrender.com/recommend", json={"query": query})
             if res.status_code == 200:
                 data = res.json()
                 recommended_assessments = data.get("recommended assessments", [])
